@@ -1,7 +1,8 @@
-<p>ngIfElse example!</p> 
-<div *ngIf="isLogIn; else isLogOut"> 
-    Hello you are logged in 
-</div> 
-<ng-template #isLogOut> 
-    You're logged out.. 
-</ng-template>
+<h2>NgFor directives</h2>
+
+<ul>
+    <li *ngFor="let l of list">
+        {{l}}
+    </li>
+
+</ul>
