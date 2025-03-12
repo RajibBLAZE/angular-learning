@@ -7,13 +7,15 @@ import { ExpenseTrackerComponent } from './expense-tracker/expense-tracker.compo
 import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
 import { ExpenseEntryComponent } from './expense-entry/expense-entry.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpenseTrackerComponent,
     TestComponent,
-    ExpenseEntryComponent
+    ExpenseEntryComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
