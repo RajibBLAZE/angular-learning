@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ExpenseTrackerComponent } from './expense-tracker/expense-tracker.component';
 import { TestComponent } from './test/test.component';
 import { FormsModule } from '@angular/forms';
+import { ExpenseEntryComponent } from './expense-entry/expense-entry.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExpenseTrackerComponent,
-    TestComponent
+    TestComponent,
+    ExpenseEntryComponent
   ],
   imports: [
     BrowserModule,
