@@ -1,5 +1,8 @@
-<ul> 
-    <li *ngFor="let std of studentArr; trackBy: trackByData"> 
-      {{std.name}} 
-    </li> 
-</ul>
+<div class="container">
+    <br/>
+    <div *ngFor="let user of users" [ngClass]="{
+        'highlight':user.userName === 'User1'
+    }">
+    {{ user.userName }}
+    </div>
+</div>
