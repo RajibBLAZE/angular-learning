@@ -1,2 +1,7 @@
-<p>test works!</p> 
-<div *ngIf="true">Display data</div>
+<p>ngIfElse example!</p> 
+<div *ngIf="isLogIn; else isLogOut"> 
+    Hello you are logged in 
+</div> 
+<ng-template #isLogOut> 
+    You're logged out.. 
+</ng-template>
