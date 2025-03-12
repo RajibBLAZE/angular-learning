@@ -3,9 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
+import { ExpenseTrackerComponent } from './expense-tracker/expense-tracker.component';
+import { TestComponent } from './test/test.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ExpenseTrackerComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule
