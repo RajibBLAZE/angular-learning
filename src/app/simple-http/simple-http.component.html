@@ -1,18 +1,16 @@
-<h2>Post Management</h2>
-
-<!-- ✅ Display fetched post -->
-<div *ngIf="loading">Loading...</div>
-<div *ngIf="postData">
-  <h3>Post Details:</h3>
-  <pre>{{ postData | json }}</pre>
-</div>
-
-<!-- ✅ Show Delete Button -->
-<button type="button" (click)="makeDelete()">Delete Post</button>
-
-<!-- ✅ Show response after deletion -->
-<div *ngIf="deleteResponse">
-  <h3>Post Deleted!</h3>
-  <p>Response: {{ deleteResponse | json }}</p>
-</div>
+<div class="container">
+    <h2>Fetch Post Data</h2>
+    
+    <button class="btn btn-primary" (click)="makeHeaders()">Fetch Post</button>
+  
+    <div *ngIf="data" class="card mt-3">
+      <div class="card-body">
+        <h5 class="card-title">Post Details</h5>
+        <p><strong>ID:</strong> {{ data.id }}</p>
+        <p><strong>Title:</strong> {{ data.title }}</p>
+        <p><strong>Body:</strong> {{ data.body }}</p>
+      </div>
+    </div>
+  </div>
+  
 

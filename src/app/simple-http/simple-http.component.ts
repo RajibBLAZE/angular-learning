@@ -1,41 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 
 @Component({
   selector: 'app-simple-http',
   templateUrl: './simple-http.component.html',
   styleUrls: ['./simple-http.component.css'],
 })
-export class SimpleHttpComponent implements OnInit {
-  postData?: any;  // Holds the fetched post data
-  deleteResponse?: any; // Holds the response after deletion
-  loading: boolean = false;
+export class SimpleHttpComponent {
+  data?: any;
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
-    this.getPost(); // Fetch post when the component loads
-  }
+  makeHeaders(): void {
+    const headers: HttpHeaders = new HttpHeaders({
+      'X-API-TOKEN': 'ng-book'
+    });
 
-  // ✅ Fetch a post before deletion
-  getPost(): void {
-    this.loading = true;
-    this.http.get('https://jsonplaceholder.typicode.com/posts/1')
-      .subscribe((data) => {
-        this.postData = data;
-        this.loading = false;
-      });
-  }
+    const req = new HttpRequest(
+      'GET',
+      'https://jsonplaceholder.typicode.com/posts/1',
+      {
+        headers: headers
+      }
+    );
 
-  // ✅ Delete the post
-  makeDelete(): void {
-    this.loading = true;
-    this.http.delete('https://jsonplaceholder.typicode.com/posts/1')
-      .subscribe((data) => {
-        this.deleteResponse = data; // Store response from deletion
-        this.postData = null; // Clear post data after deletion
-        this.loading = false;
-      });
+    this.http.request(req).subscribe((response: any) => {
+      this.data = response['body'];
+    });
   }
 }
+
 
