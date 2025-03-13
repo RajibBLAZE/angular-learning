@@ -1,24 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import{HttpClient}from'@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-simple-http',
   templateUrl: './simple-http.component.html',
-  styleUrls: ['./simple-http.component.css']
+  styleUrls: ['./simple-http.component.css'],
 })
 export class SimpleHttpComponent implements OnInit {
-  data?:  Object;
+  data?: Object;
   loading?: boolean;
-  constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-  }
-  makeRequest(): void{
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {}
+  makePost(): void {
     this.loading = true;
+  
+    const requestBody = {
+      body: 'bar',
+      title: 'foo',
+      userId: 1
+    };
+  
     this.http
-      .get('https://jsonplaceholder.typicode.com/posts/1')
-      .subscribe(data =>{
+      .post('https://jsonplaceholder.typicode.com/posts', requestBody) 
+      .subscribe((data) => {
         this.data = data;
         this.loading = false;
       });
   }
+  
 }
