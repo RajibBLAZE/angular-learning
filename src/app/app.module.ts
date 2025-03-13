@@ -9,7 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExpenseEntryComponent } from './expense-entry/expense-entry.component';
 import { ChildComponent } from './child/child.component';
 import { PracComponent } from './prac/prac.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { SimpleHttpComponent } from './simple-http/simple-http.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +18,16 @@ import { PracComponent } from './prac/prac.component';
     TestComponent,
     ExpenseEntryComponent,
     ChildComponent,
-    PracComponent
+    PracComponent,
+    SimpleHttpComponent
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
