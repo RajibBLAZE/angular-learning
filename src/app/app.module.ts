@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 
 import { ExpenseTrackerComponent } from './expense-tracker/expense-tracker.component';
 import { TestComponent } from './test/test.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExpenseEntryComponent } from './expense-entry/expense-entry.component';
 import { ChildComponent } from './child/child.component';
+import { PracComponent } from './prac/prac.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,13 @@ import { ChildComponent } from './child/child.component';
     ExpenseTrackerComponent,
     TestComponent,
     ExpenseEntryComponent,
-    ChildComponent
+    ChildComponent,
+    PracComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
