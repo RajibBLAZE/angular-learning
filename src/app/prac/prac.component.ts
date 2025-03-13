@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl,FormGroup,Validator,FormBuilder, Validators } from '@angular/forms';
+import { FormControl,FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-prac',
   templateUrl: './prac.component.html',
   styleUrls: ['./prac.component.css']
 })
 export class PracComponent implements OnInit {
-  //Create a FormGroup
-  requiredForm!: FormGroup;
-  constructor(private fb: FormBuilder) {
-    this.myForm();
-   }
-  //create required field validator for name
-  myForm(){
-    this.requiredForm = this.fb.group({
-      name: ['', Validators.required]
-    });
+  //create a form
+  EmailRequiredForm!: FormGroup;
+  constructor(private fb: FormBuilder){
+    this.emailForm();
   }
-  ngOnInit(): void {
+  
+  emailForm(){
+    this.EmailRequiredForm = this.fb.group({ 
+      email: ['', [Validators.required,  
+              Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")] ] 
+      });
+
+  }
+  ngOnInit() {
     
   }
   
