@@ -12,21 +12,13 @@ export class SimpleHttpComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
-  makePost(): void {
+  makeDelete(): void {
     this.loading = true;
-  
-    const requestBody = {
-      body: 'bar',
-      title: 'foo',
-      userId: 1
-    };
-  
     this.http
-      .post('https://jsonplaceholder.typicode.com/posts', requestBody) 
+      .delete('https://jsonplaceholder.typicode.com/posts/1')
       .subscribe((data) => {
         this.data = data;
         this.loading = false;
       });
   }
-  
 }
