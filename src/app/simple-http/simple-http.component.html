@@ -1,4 +1,18 @@
-<h2>Basic Request</h2>
-    <button type="button"(click)="makeDelete()">Make Delete</button>
-    <div *ngIf="loading">loading...</div>
-<pre>{{data | json}}</pre>
+<h2>Post Management</h2>
+
+<!-- ✅ Display fetched post -->
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="postData">
+  <h3>Post Details:</h3>
+  <pre>{{ postData | json }}</pre>
+</div>
+
+<!-- ✅ Show Delete Button -->
+<button type="button" (click)="makeDelete()">Delete Post</button>
+
+<!-- ✅ Show response after deletion -->
+<div *ngIf="deleteResponse">
+  <h3>Post Deleted!</h3>
+  <p>Response: {{ deleteResponse | json }}</p>
+</div>
+
