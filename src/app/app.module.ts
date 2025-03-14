@@ -51,7 +51,7 @@ import { AuthGuardService } from './services/guards/auth-guard.service';
     AppRoutingModule
     
   ],
-  providers: [AuthService,AuthGuardService],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
