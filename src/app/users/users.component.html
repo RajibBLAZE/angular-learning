@@ -1,8 +1,17 @@
 <div>
-    <div>User with id is {{ user.id}}</div>
-    <div>User with name is {{ user.name}}</div>
+  <div>User with id is {{ user.id }}</div>
+  <div>User with name is {{ user.name }}</div>
 </div>
 
 <div>
-    <a [routerLink]="['/users', 1, 'leela']">Get the details of leela</a>
+  <a
+    [routerLink]="['/users', 1, 'leela']"
+    [queryParams]="{ page: 1, search: 'leela' }"
+    [fragment]="'load'"
+    >Get the details of leela</a
+  >
+</div>
+
+<div>
+    <button (click)="getRamaDetails()">Rama Details</button>
 </div>
