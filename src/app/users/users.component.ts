@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  onCategoryClick(){
+    // this.router.navigateByUrl('/category');
+    // using navigateByUrl function
+    this.router.navigate(['/category']);
+    //using navigate and passing a array
   }
 
 }
