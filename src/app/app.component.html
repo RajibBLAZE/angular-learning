@@ -4,11 +4,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <ul class="nav flex-column">
-        <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/users">Users</a></li>
+      <ul class="nav flex-column nav-pills">
+        <li class="nav-item "><a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" >Home</a></li>
+        <!-- routerlinkactiveoptions is used because without this home nav will always be selected while clicking to other nav bar component -->
+        <li class="nav-item"><a class="nav-link" routerLink="/users" routerLinkActive="active">Users</a></li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/category']">Category</a> 
+          <a class="nav-link" [routerLink]="['/category']" routerLinkActive="active">Category</a> 
           <!-- Property binding -->
         </li>
       </ul>
