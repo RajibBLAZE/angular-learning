@@ -10,7 +10,19 @@ import { ExpenseEntryComponent } from './expense-entry/expense-entry.component';
 import { ChildComponent } from './child/child.component';
 import { PracComponent } from './prac/prac.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SimpleHttpComponent } from './simple-http/simple-http.component'
+import { SimpleHttpComponent } from './simple-http/simple-http.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { CategoryComponent } from './category/category.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent },
+  {path: 'users', component: UsersComponent},
+  {path: 'category', component: CategoryComponent},
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +31,21 @@ import { SimpleHttpComponent } from './simple-http/simple-http.component'
     ExpenseEntryComponent,
     ChildComponent,
     PracComponent,
-    SimpleHttpComponent
+    SimpleHttpComponent,
+    HomeComponent,
+    UsersComponent,
+    CategoryComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    RouterModule.forRoot(appRoutes)
     
   ],
   providers: [],
