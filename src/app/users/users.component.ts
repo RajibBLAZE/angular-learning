@@ -23,10 +23,19 @@ export class UsersComponent implements OnInit {
         name: data['name'],
       };
     });
+    // console.log(this.route.snapshot.queryParams);
+    // console.log(this.route.snapshot.fragment);
+    this.route.queryParams.subscribe(data =>{
+      console.log(data);
+    })
+    this.route.fragment.subscribe(data =>{
+      console.log(data);
+    })
   }
   getRamaDetails() {
     this.router.navigate(['/users', 2, 'Rama'], {
-      queryParams: { pages: 1, search: 'leela' },
+      queryParams: { pages: 2, search: 'Rama' },
+      fragment: 'loading',
     });
   }
 }
