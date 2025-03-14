@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { AuthService } from './services/guards/auth.service';
 
 import { ExpenseTrackerComponent } from './expense-tracker/expense-tracker.component';
 import { TestComponent } from './test/test.component';
@@ -21,6 +22,7 @@ import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthGuardService } from './services/guards/auth-guard.service';
 
 
 @NgModule({
@@ -49,7 +51,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule
     
   ],
-  providers: [],
+  providers: [AuthService,AuthGuardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

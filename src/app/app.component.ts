@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { AuthService } from './services/guards/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,13 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 })
 export class AppComponent {
   title = 'angular-app-latest';
+  constructor(public authService: AuthService){
+  }
+  onLoginClick(){
+    this.authService.login();
+  }
+  onLogoutClick(){
+    this.authService.logout();
+  }
+    
 }
