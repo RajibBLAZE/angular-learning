@@ -19,6 +19,7 @@ import { CategoryComponent } from './category/category.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +34,9 @@ const appRoutes: Routes = [
   },
 
   { path: 'category', component: CategoryComponent },
+  { path: 'not-found', component: PageNotFoundComponent},
+  { path: '**', redirectTo: 'not-found' }
+      // path for unknown urls
 ];
 @NgModule({
   declarations: [
@@ -47,6 +51,7 @@ const appRoutes: Routes = [
     UsersComponent,
     CategoryComponent,
     UserComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
