@@ -17,15 +17,22 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { CategoryComponent } from './category/category.component';
 import { RouterModule, Routes } from '@angular/router';
+import { UserComponent } from './user/user.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent },
-  {path: 'users', component: UsersComponent},
-  {path: 'users', component: UsersComponent,
-    children: [{ path: ':id/:name', component: UsersComponent}]
+  { path: '', component: HomeComponent },
+  { path: 'users', component: UsersComponent },
+  {
+    path: 'users',
+    component: UsersComponent,
+    children: [
+      { path: ':id/:name', component: UserComponent },
+      { path: ':id/:name/edit', component: EditUserComponent },
+    ],
   },
 
-  {path: 'category', component: CategoryComponent},
+  { path: 'category', component: CategoryComponent },
 ];
 @NgModule({
   declarations: [
@@ -39,8 +46,7 @@ const appRoutes: Routes = [
     HomeComponent,
     UsersComponent,
     CategoryComponent,
-    
-    
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,10 +55,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    RouterModule.forRoot(appRoutes)
-    
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

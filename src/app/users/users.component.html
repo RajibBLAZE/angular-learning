@@ -1,15 +1,32 @@
 <ul class="nav flex-column">
-    <li class="nav-item">
-      <a [routerLink]="['/users', 1, 'rama']" class="nav-link">Get Rama Details</a>
-    </li>
-    <li class="nav-item">
-      <a [routerLink]="['/users', 2, 'Krishna']" class="nav-link">Get Krishna Details</a>
-    </li>
-    <li class="nav-item">
-      <a [routerLink]="['/users', 3, 'leele']" class="nav-link">Get Leela Details</a>
-    </li>
-  </ul>
-  <div>
-    <router-outlet> </router-outlet>
-  </div>
-  
+  <li class="nav-item">
+    <a
+      [routerLink]="['/users', 1, 'rama']"
+      [queryParams]="{ page: 1, search: 'leela' }"
+      [fragment]="'load'"
+      class="nav-link"
+      >Get Rama Details</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      [routerLink]="['/users', 2, 'Krishna']"
+      [queryParams]="{ page: 1, search: 'leela' }"
+      [fragment]="'load'"
+      class="nav-link"
+      >Get Krishna Details</a
+    >
+  </li>
+  <li class="nav-item">
+    <a
+      [routerLink]="['/users', 3, 'leele']"
+      [queryParams]="{ page: 1, search: 'leela' }"
+      [fragment]="'load'"
+      class="nav-link"
+      >Get Leela Details</a
+    >
+  </li>
+</ul>
+<div>
+  <router-outlet> </router-outlet>
+</div>
