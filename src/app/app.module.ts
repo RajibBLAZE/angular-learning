@@ -23,6 +23,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthGuardService } from './services/guards/auth-guard.service';
+import { DeavtivateGuardService } from './services/guards/deactivate-guard.service';
 
 
 @NgModule({
@@ -51,7 +52,7 @@ import { AuthGuardService } from './services/guards/auth-guard.service';
     AppRoutingModule
     
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, DeavtivateGuardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
