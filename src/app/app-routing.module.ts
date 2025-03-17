@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGuardService } from './services/guards/auth-guard.service';
 import { DeavtivateGuardService } from './services/guards/deactivate-guard.service';
 import { UserResolveService } from './services/resolvers/user-resolve.services';
+import { truncate } from 'fs';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { page: 1, search: 'Leela' } },
@@ -34,7 +35,7 @@ const appRoutes: Routes = [
   // path for unknown urls
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes,{useHash: true}) ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
