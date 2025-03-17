@@ -10,7 +10,7 @@ import { AuthGuardService } from "./services/guards/auth-guard.service";
 import { DeavtivateGuardService } from "./services/guards/deactivate-guard.service";
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, data: { page: 1, search: 'Leela' }},
   {
     path: 'users',
     component: UsersComponent,
